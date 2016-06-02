@@ -5,4 +5,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="app_loading">正在加载</string>
+
+
+    <string name="action_talk">话说</string>
+    <string name="action_picture">图片</string>
+
 </resources>
