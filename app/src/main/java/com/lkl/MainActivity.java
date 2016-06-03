@@ -17,6 +17,9 @@ import android.view.View;
 import com.lkl.base.BaseActivity;
 import com.lkl.news.view.NewsActivity;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  *
  * 主页面
@@ -31,7 +34,7 @@ public class MainActivity extends BaseActivity
 
     private FloatingActionButton   fab;
 
-    @Override
+
     public void init() {
         mContext = this;
     }
@@ -60,6 +63,8 @@ public class MainActivity extends BaseActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        init();
     }
 
     @Override
@@ -78,6 +83,26 @@ public class MainActivity extends BaseActivity
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+
+    public String getFromAssets(String fileName) {
+        String result = "";
+        try {
+
+
+            InputStreamReader inputReader = new InputStreamReader(getResources().getAssets().open(fileName));
+            BufferedReader bufReader = new BufferedReader(inputReader);
+            String line = "";
+
+            while ((line = bufReader.readLine()) != null)
+                result += line;
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return  result;
+    }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

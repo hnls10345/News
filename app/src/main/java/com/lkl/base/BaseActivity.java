@@ -20,16 +20,12 @@ import com.readystatesoftware.systembartint.SystemBarTintManager;
 public abstract  class BaseActivity extends AppCompatActivity {
     private static String TAG = BaseActivity.class.getSimpleName();
 
-    /**
-     * 初始化页面
-     */
-   public abstract void init();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-       init();
 
         //KitKat translucent modes
         //setTranslucentStatus(this, true);
