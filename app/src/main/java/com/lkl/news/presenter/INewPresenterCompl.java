@@ -53,8 +53,9 @@ public class INewPresenterCompl implements INewPresenter{
     public void getNews() {
 //        List<NewsModel> newsModelList = parseNews2();;
 //                        iNewsView.onGetNewsResult(newsModelList);
+        iNewsView.showProgress();
         OkHttpUtils
-                .get()
+        .get()
                 .url(Constans.WEB_URL)
 
                 .build()
@@ -68,12 +69,21 @@ public class INewPresenterCompl implements INewPresenter{
                     @Override
                     public void onResponse(String response, int id) {
                         FLog.e("response", response);
-                        List<NewsModel> newsModelList = parseNews(response);
+                        final List<NewsModel> newsModelList = parseNews(response);
 
-                        iNewsView.onGetNewsResult(newsModelList);
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                iNewsView.onGetNewsResult(newsModelList);
+                                iNewsView.dismissProgress();
+                            }
+                        },5000);
+
                     }
                 });
     }
+
+
 
 
     private List<NewsModel> parseNews(String result){

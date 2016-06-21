@@ -5,4 +5,5 @@ package com.lkl.news.presenter;
  */
 public interface INewPresenter {
     void getNews();
+
 }

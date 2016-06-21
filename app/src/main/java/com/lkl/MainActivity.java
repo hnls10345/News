@@ -12,13 +12,9 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.lkl.base.BaseActivity;
 import com.lkl.news.view.NewsActivity;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 
 /**
  *
@@ -28,7 +24,6 @@ import java.io.InputStreamReader;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
 
     private Context mContext;
 
@@ -46,14 +41,14 @@ public class MainActivity extends BaseActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -66,6 +61,7 @@ public class MainActivity extends BaseActivity
 
         init();
     }
+
 
     @Override
     public void onBackPressed() {
@@ -82,24 +78,6 @@ public class MainActivity extends BaseActivity
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-    }
-
-    public String getFromAssets(String fileName) {
-        String result = "";
-        try {
-
-
-            InputStreamReader inputReader = new InputStreamReader(getResources().getAssets().open(fileName));
-            BufferedReader bufReader = new BufferedReader(inputReader);
-            String line = "";
-
-            while ((line = bufReader.readLine()) != null)
-                result += line;
-            return result;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return  result;
     }
 
 

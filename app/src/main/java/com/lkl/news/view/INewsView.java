@@ -10,4 +10,6 @@ import java.util.List;
  */
 public interface INewsView {
      void onGetNewsResult(List<NewsModel> newsModelList );
+     void showProgress();
+     void dismissProgress();
 }
