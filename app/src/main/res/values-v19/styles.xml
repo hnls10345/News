@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<style name="AppNavigationDrawerTheme" parent="MaterialNavigationDrawerTheme.Light.TranslucentKitKatStatusBar">-->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+
+
+        <!--&lt;!&ndash;Translucent system bars&ndash;&gt;-->
+        <!--<item name="android:windowTranslucentNavigation">false</item>-->
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <!--&lt;!&ndash;<item name="android:fitsSystemWindows">false</item>&ndash;&gt;-->
+
+        <!--<item name="drawerType">@integer/DRAWERTYPE_IMAGE</item>-->
+        <!--<item name="singleAccount">true</item>-->
+        <!--<item name="learningPattern">false</item>-->
+        <!--<item name="rippleBackport">true</item>-->
+    <!--</style>-->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowIsTranslucent">true</item>
+
+        <!--Translucent system bars-->
+        <!--<item name="android:actionBarStyle">@style/TranslucentActionBar</item>-->
+        <!--<item name="android:windowTranslucentNavigation">true</item>-->
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <!--<item name="android:windowContentOverlay">@null</item>-->
+    </style>
+
+    <style name="TranslucentActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!--<style name="ActivityThemeNoBar" parent="MaterialNavigationDrawerTheme.Light">-->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+
+        <!--&lt;!&ndash;Translucent system bars&ndash;&gt;-->
+        <!--&lt;!&ndash;<item name="android:actionBarStyle">@style/TranslucentActionBar</item>&ndash;&gt;-->
+        <!--<item name="android:windowTranslucentNavigation">false</item>-->
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <!--<item name="android:windowContentOverlay">@null</item>-->
+        <!--&lt;!&ndash;<item name="android:fitsSystemWindows">true</item>&ndash;&gt;-->
+    <!--</style>-->
+</resources>

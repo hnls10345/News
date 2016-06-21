@@ -5,5 +5,7 @@ package com.lkl;
  */
 public class Constans {
 
-    public final static String WEB_URL = "http://36kr.com/";
+    public final static String WEB_URL = "http://www.36kr.com/";
+
+
 }

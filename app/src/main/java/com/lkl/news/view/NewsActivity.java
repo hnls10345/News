@@ -64,11 +64,12 @@ public class NewsActivity extends BaseActivity implements INewsView {
 
     @Override
     public void onGetNewsResult(List<NewsModel> newsModelList) {
-           if (newsModelList !=null){
-
+           if (newsModelList !=null&&newsModelList.size()!=0){
                RecyclerViewAdapter adapter = new RecyclerViewAdapter(newsModelList);
                recyclerview.setAdapter(adapter);
                recyclerview.setHasFixedSize(false);
+           }else{
+               Snackbar.make(layoutHome, "no result", Snackbar.LENGTH_LONG).show();
            }
     }
 }
